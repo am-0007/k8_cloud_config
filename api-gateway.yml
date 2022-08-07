@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+            - Path=/api/department/**
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/k8_1.0/user/**
