@@ -1,19 +1,5 @@
 # department-service
 
-spring:
- data:
-   mongodb:
-     port: 27000
-     username: am0007
-     password: password
-     database: department-service
-     host: localhost
-     authentication-database: admin
-      
-mvc:
-   pathmatch:
-     matching-strategy: ant_path_matcher
-
 # eureka:
 #   instance:
 #     instance-id: ${spring.application.name}-${random.uuid}
