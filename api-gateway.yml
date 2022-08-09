@@ -9,9 +9,9 @@ spring:
         - id: department-service
           uri: lb://DEPARTMENT-SERVICE
           predicates:
-            - Path=/api/k8_1.0/department/addDepartment/**
+            - Path=/api/k8_1_0/department/addDepartment/**
 
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/api/k8_1.0/user/**
+            - Path=/api/k8_1_0/user/**
