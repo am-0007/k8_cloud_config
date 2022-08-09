@@ -9,7 +9,7 @@ spring:
         - id: department-service
           uri: lb://DEPARTMENT-SERVICE
           predicates:
-            - Path=/ap1/k8_1.0/department/**
+            - Path=/ap1/k8_1.0/department/addDepartment
 
         - id: user-service
           uri: lb://user-service
