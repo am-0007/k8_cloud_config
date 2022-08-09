@@ -9,3 +9,7 @@ spring:
       database: department-service
       host: localhost
       authentication-database: admin
+      
+mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
