@@ -7,7 +7,7 @@ spring:
           enabled: true
       routes:
         - id: department-service
-          uri: lb://department-service
+          uri: lb://DEPARTMENT-SERVICE
           predicates:
             - Path=/ap1/k8_1.0/department/**
 
