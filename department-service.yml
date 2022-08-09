@@ -16,4 +16,4 @@
 
 eureka:
   instance:
-    instance-id: ${spring.application.name}-${random.uuid}
+    instance-id: department-service-jksd981-1238dsi-128s2-asdk1
