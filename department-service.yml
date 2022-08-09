@@ -1,0 +1,11 @@
+#department-service
+
+spring:
+  data:
+    mongodb:
+      port: 27000
+      username: am0007
+      password: password
+      database: department-service
+      host: localhost
+      authentication-database: admin
