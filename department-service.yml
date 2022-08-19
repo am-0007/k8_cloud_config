@@ -4,4 +4,4 @@
 #   instance:
 #     instance-id: ${spring.application.name}-${random.uuid}
 springdoc:
-  packagesToScan: com.departmentService.controller
+  packagesToScan: com.departementService
