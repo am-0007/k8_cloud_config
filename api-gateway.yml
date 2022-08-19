@@ -15,3 +15,10 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/k8_1_0/user/**
+springdoc:
+  swagger-ui:
+    urls:
+      - name: user
+        url: /v3/api-docs/user
+      - name: department
+        url: /v3/api-docs/department
