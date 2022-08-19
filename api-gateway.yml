@@ -30,6 +30,6 @@ springdoc:
   swagger-ui:
     urls:
       - name: user
-        url: /v3/api-docs//api/k8_1_0/user
+        url: /v3/api-docs/api/k8_1_0/user
       - name: department
-        url: /v3/api-docs//api/k8_1_0/department
+        url: /v3/api-docs/api/k8_1_0/department
