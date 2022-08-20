@@ -5,3 +5,5 @@
 #     instance-id: ${spring.application.name}-${random.uuid}
 # springdoc:
 #   packages-to-scan: com.departementService
+springdoc:
+  packagesToScan: com.department
