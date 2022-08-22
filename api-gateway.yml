@@ -5,7 +5,7 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-url: "http://localhost:8080/realms/microservice_k8"
+            issuer-uri: "http://localhost:8080/realms/microservice_k8"
         registration:
           microservice_k8:
             k8-oauth-demo:
