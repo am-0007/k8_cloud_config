@@ -12,7 +12,6 @@ spring:
             - Path=/api/k8_1_0/department/**
           filters:
             - RewritePath=/api/k8_1_0/department/(?<path>.*), /$\{path}
-
         - id: user-service
           uri: lb://user-service
           predicates:
