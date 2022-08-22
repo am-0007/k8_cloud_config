@@ -3,7 +3,7 @@ spring:
   application:
     name: department-service
 springdoc:
-  packagesToScan: com.department
+  packageToScan: com.department
 # eureka:
 #   instance:
 #     instance-id: ${spring.application.name}-${random.uuid}
