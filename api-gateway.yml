@@ -1,4 +1,19 @@
 spring:
+# keycloak
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-url: "http://localhost:8080/realms/microservice_k8"
+        registration:
+          microservice_k8:
+            k8-oauth-demo:
+              client-secret: ZmmuRJF4TsuiJpuq6PiXYueRD7aDOveo
+              provider: keycloak
+              authorization-grant-type: authorization_code
+              redirect-uri:  http://localhost:2003/login/oauth2/code/k8-oauth-demo
+#   cloud
   cloud:
     gateway:
       discovery:
@@ -24,7 +39,7 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
-
+# openapi
 springdoc:
   swagger-ui:
     urls:
@@ -32,3 +47,5 @@ springdoc:
         url: /v3/api-docs/api/k8_1_0/user
       - name: department
         url: /v3/api-docs/api/k8_1_0/department
+
+  
