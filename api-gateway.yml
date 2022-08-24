@@ -8,7 +8,7 @@ spring:
             issuer-uri: "http://localhost:8080/realms/microservice_k8"
         registration:
           microservice_k8:
-            k8-oauth-demo:
+              client-id: k8-oauth-demo
               client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
               provider: keycloak
               authorization-grant-type: authorization_code
