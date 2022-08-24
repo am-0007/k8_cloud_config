@@ -9,7 +9,7 @@ spring:
         registration:
           microservice_k8:
             k8-oauth-demo:
-              client-secret: ZmmuRJF4TsuiJpuq6PiXYueRD7aDOveo
+              client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
               provider: keycloak
               authorization-grant-type: authorization_code
               redirect-uri:  http://localhost:2003/login/oauth2/code/k8-oauth-demo
