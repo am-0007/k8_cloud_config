@@ -53,6 +53,7 @@ springdoc:
     oAuthFlow:
       authorizationUrl: ${oAuthFlow.authorizationUrl}
       tokenUrl: ${oAuthFlow.tokenUrl}
+      use-pkce-with-authorization-code-grant: true
 management:
   endpoints:
     web:
