@@ -51,10 +51,10 @@ springdoc:
     oauth:
       clientId: k8-oauth-demo
       clientSecret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
-    oAuthFlow:
-      authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
-      tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
-      use-pkce-with-authorization-code-grant: true
+  oAuthFlow:
+    authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
+    tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
+    use-pkce-with-authorization-code-grant: true
 management:
   endpoints:
     web:
