@@ -47,6 +47,9 @@ springdoc:
         url: /v3/api-docs/api/k8_1_0/user
       - name: department
         url: /v3/api-docs/api/k8_1_0/department
+    oauth:
+      clientId: k8-oauth-demo
+      clientSecret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
         
 management:
   endpoints:
