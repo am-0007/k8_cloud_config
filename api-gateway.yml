@@ -50,7 +50,9 @@ springdoc:
     oauth:
       clientId: k8-oauth-demo
       clientSecret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
-        
+    oAuthFlow:
+      authorizationUrl: ${oAuthFlow.authorizationUrl}
+      tokenUrl: ${oAuthFlow.tokenUrl}
 management:
   endpoints:
     web:
