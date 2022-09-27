@@ -4,8 +4,8 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    instance-id: ${spring.application.name}-${random.uuid}
+#   instance:
+#     instance-id: ${spring.application.name}-${random.uuid}
 
 oAuthFlow:
     authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
