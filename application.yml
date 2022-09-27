@@ -7,6 +7,6 @@ eureka:
 #   instance:
 #     instance-id: ${spring.application.name}-${random.uuid}
 
-oAuthFlow:
-    authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
-    tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
+# oAuthFlow:
+#     authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
+#     tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
