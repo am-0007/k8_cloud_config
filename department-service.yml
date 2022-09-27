@@ -2,11 +2,11 @@
 spring:
   application:
     name: department-service
-springdoc:
-  packageToScan: com.department
-# eureka:
-#   instance:
-#     instance-id: ${spring.application.name}-${random.uuid}
+# springdoc:
+#   packageToScan: com.department
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-lh-${server.port}
 # springdoc:
 #   packages-to-scan: com.departementService
 
