@@ -1,5 +1,8 @@
 spring:
   application:
     name: user-service
-springdoc:
-  packageToScan: com.user
+# springdoc:
+#   packageToScan: com.user
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-lh-2000
