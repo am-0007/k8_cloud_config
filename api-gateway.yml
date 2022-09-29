@@ -7,7 +7,7 @@ spring:
             issuer-url: "http://localhost:8080/realms/microservice_k8"
             jwk-set-uri": "http://localhost:8080/realms/microservice_k8/protocol/openid-connect/certs"
         registration:
-          microservice_temp:
+          microservice_k8:
             client-id: k8-oauth-demo
             client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
             provider: keycloak
