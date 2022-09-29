@@ -1,0 +1,125 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-url: "http://localhost:8080/realms/microservice_k8"
+            jwk-set-uri": "http://localhost:8080/realms/microservice_k8/protocol/openid-connect/certs"
+        registration:
+          microservice_temp:
+            client-id: k8-oauth-demo
+            client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
+            provider: keycloak
+            authorization-grant-type: authorization_code
+            redirect-uri:  http://localhost:2003/login/oauth/code/k8-oauth-demo
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+            - Path=/api/microservice/department/**
+          filters:
+            - RewritePath=/api/microservice/department/(?<path>.*), /$\{path}
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/microservice/user/**
+          filters:
+            - RewritePath=/api/microservice/user/(?<path>.*), /$\{path}
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v1/api-docs/**
+          filters:
+            - RewritePath=/v1/api-docs/(?<path>.*), /$\{path}/v1/api-docs
+      default-filters: TokenRelay
+
+  main:
+    allow-bean-definition-overriding: true
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: user
+        url: /v1/api-docs/api/microservice/user
+      - name: department
+        url: /v1/api-docs/api/microservice/department
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+# spring:
+# # keycloak
+#   security:
+#     oauth2:
+#       client:
+#         provider:
+#           keycloak:
+#             issuer-uri: "http://localhost:8080/realms/microservice_k8"
+#             jwk-set-uri": "http://localhost:8080/realms/microservice_k8/protocol/openid-connect/certs"
+#         registration:
+#           microservice_k8:
+#               client-id: k8-oauth-demo
+#               client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
+#               provider: keycloak
+#               authorization-grant-type: authorization_code
+#               redirect-uri:  http://localhost:2003/login/oauth2/code/k8-oauth-demo
+# #   cloud
+#   cloud:
+#     gateway:
+#       discovery:
+#         locator:
+#           lower-case-service-id: true
+#           enabled: true
+#       routes:
+#         - id: department-service
+#           uri: lb://department-service
+#           predicates:
+#             - Path=/api/k8_1_0/department/**
+#           filters:
+#             - RewritePath=/api/k8_1_0/department/(?<path>.*), /$\{path}
+#         - id: user-service
+#           uri: lb://user-service
+#           predicates:
+#             - Path=/api/k8_1_0/user/**
+#           filters:
+#             - RewritePath=/api/k8_1_0/user/(?<path>.*), /$\{path}
+#         - id: openapi
+#           uri: http://localhost:${server.port}
+#           predicates:
+#             - Path=/v3/api-docs/**
+#           filters:
+#             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+# # openapi
+# springdoc:
+#   swagger-ui:
+#     urls:
+#       - name: user
+#         url: /v3/api-docs/api/k8_1_0/user
+#       - name: department
+#         url: /v3/api-docs/api/k8_1_0/department
+#     oauth:
+#       clientId: k8-oauth-demo
+#       clientSecret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
+#   oAuthFlow:
+#     authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
+#     tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
+#     use-pkce-with-authorization-code-grant: true
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: '*'
+
+  
