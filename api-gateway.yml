@@ -1,18 +1,18 @@
 spring:
-  security:
-    oauth2:
-      client:
-        provider:
-          keycloak:
-            issuer-url: "http://localhost:8080/realms/microservice_k8"
-            jwk-set-uri": "http://localhost:8080/realms/microservice_k8/protocol/openid-connect/certs"
-        registration:
-          microservice_k8:
-            client-id: k8-oauth-demo
-            client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
-            provider: keycloak
-            authorization-grant-type: authorization_code
-            redirect-uri:  http://localhost:2003/login/oauth/code/k8-oauth-demo
+#   security:
+#     oauth2:
+#       client:
+#         provider:
+#           keycloak:
+#             issuer-url: "http://localhost:8080/realms/microservice_k8"
+#             jwk-set-uri": "http://localhost:8080/realms/microservice_k8/protocol/openid-connect/certs"
+#         registration:
+#           microservice_k8:
+#             client-id: k8-oauth-demo
+#             client-secret: P6u2tAmcUWMQXYVyXlTh5tjB3nSYtNHu
+#             provider: keycloak
+#             authorization-grant-type: authorization_code
+#             redirect-uri:  http://localhost:2003/login/oauth/code/k8-oauth-demo
 
   cloud:
     gateway:
