@@ -39,7 +39,7 @@ spring:
             - Path=/v1/api-docs/**
           filters:
             - RewritePath=/v1/api-docs/(?<path>.*), /$\{path}/v1/api-docs
-      default-filters: TokenRelay
+#       default-filters: TokenRelay
 
   main:
     allow-bean-definition-overriding: true
