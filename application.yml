@@ -7,6 +7,17 @@
 #   instance:
 #     instance-id: ${spring.application.name}-lh-${server.port}
 
+eureka:
+  instance:
+    hostname: eureka-0
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka-0.eureka.deafult.svc.cluster.local:8761/eureka
+
+
 # oAuthFlow:
 #     authorizationUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/auth
 #     tokenUrl: http://localhost:8080/realms/microservice_k8/protocol/openid-connect/token
